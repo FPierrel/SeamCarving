@@ -13,6 +13,8 @@ class Image
 {
 public:
     Image(QString filename);
+    ~Image();
+
     void setZone(int x1Zone,int x2Zone,int y1Zone,int y2Zone);
     Image resize(int width, int height);
     operator QImage(); // cast

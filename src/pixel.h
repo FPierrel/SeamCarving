@@ -8,7 +8,7 @@ public:
     Pixel();
     Pixel(int r, int g, int b);
     void setColor(int r, int g, int b);
-    int interest(Pixel left, Pixel right);
+    int interest(Pixel *left, Pixel *right);
 
     int r;
     int g;
