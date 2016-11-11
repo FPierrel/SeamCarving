@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <string>
 
+#include "image.h"
+
 using namespace std;
 
 namespace Ui {
@@ -24,8 +26,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     string filename;
-
-    void loadFile(string filename);
+    Image *img1;
 };
 
 #endif // MAINWINDOW_H

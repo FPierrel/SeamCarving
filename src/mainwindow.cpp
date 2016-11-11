@@ -17,10 +17,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionLoad_triggered()
 {
-    this->loadFile(QFileDialog::getOpenFileName(this,"Select image",".","Image Files (*.png *.jpg *.bmp)"));
+    img1 = new Image(QFileDialog::getOpenFileName(this,"Select image",".","Image Files (*.png *.jpg *.bmp)"));
 }
 
-void MainWindow::loadFile(string filename)
-{
 
-}

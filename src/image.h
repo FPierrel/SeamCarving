@@ -12,16 +12,16 @@ using namespace std;
 class Image
 {
 public:
-    Image(string filename);
-    void setZone(x1Zone, x2Zone, y1Zone, y2Zone);
+    Image(QString filename);
+    void setZone(int x1Zone,int x2Zone,int y1Zone,int y2Zone);
     Image resize(int width, int height);
     operator QImage(); // cast
 
     Graph graph;
-    Pixel** img;
+    Pixel **img; // img[y][x] from top-left corner
     int height, width;
     int maxVal;
-    int** itr;
+    int **itr;
 
     //zone to exclude
     int x1Zone, x2Zone, y1Zone, y2Zone;
