@@ -5,7 +5,11 @@
 class Edge
 {
 public:
-    Edge();
+    Edge(int from, int to, int cost);
+
+    int from;
+    int to;
+    int cost;
 };
 
 #endif // EDGE_H

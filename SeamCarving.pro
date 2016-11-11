@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QMAKE_CXXFLAGS += -std=c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,12 +18,16 @@ SOURCES += src/main.cpp\
     src/image.cpp \
     src/graph.cpp \
     src/edge.cpp \
-    src/pixel.cpp
+    src/pixel.cpp \
+    src/heap.cpp \
+    src/seamcarving.cpp
 
 HEADERS  += src/mainwindow.h \
     src/image.h \
     src/graph.h \
     src/edge.h \
-    src/pixel.h
+    src/pixel.h \
+    src/heap.h \
+    src/seamcarving.h
 
 FORMS    += mainwindow.ui

@@ -16,22 +16,25 @@ public:
     ~Image();
 
     void setZone(int x1Zone,int x2Zone,int y1Zone,int y2Zone);
-    Image resize(int width, int height);
-    operator QImage(); // cast
+    void resize(int new_width, int new_height);
 
-    Graph graph;
-    Pixel **img; // img[y][x] from top-left corner
+    QImage toQImage();
+
+    Graph *graph = NULL;
+    Pixel **img = NULL; // img[y][x] from top-left corner
     int height, width;
     int maxVal;
-    int **itr;
+    int **itr = NULL;
 
     //zone to exclude
     int x1Zone, x2Zone, y1Zone, y2Zone;
 
 private:
+    void delete_img();
     void transpose();
     void interest();
     void tograph();
+    void update(vector<int> list);
 };
 
 #endif // IMAGE_H

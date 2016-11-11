@@ -8,16 +8,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
 {
+    delete image;
     delete ui;
 }
 
 void MainWindow::on_actionLoad_triggered()
 {
-    img1 = new Image(QFileDialog::getOpenFileName(this,"Select image",".","Image Files (*.png *.jpg *.bmp)"));
+    image = new Image(QFileDialog::getOpenFileName(this,"Select image",".","Image Files (*.png *.jpg *.bmp)"));
+    QPixmap p = QPixmap::fromImage(image->toQImage());
+
+    ui->original->setPixmap(p.scaled(ui->original->size(), Qt::KeepAspectRatio));
 }
 
 

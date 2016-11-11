@@ -26,7 +26,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     string filename;
-    Image *img1;
+    Image *image;
 };
 
 #endif // MAINWINDOW_H
