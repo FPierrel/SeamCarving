@@ -91,6 +91,8 @@ int Heap::pop()
 
 Heap::~Heap()
 {
-
+    delete[] heap;
+    delete[] cor;
+    delete[] item;
 }
 

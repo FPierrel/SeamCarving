@@ -1,8 +1,12 @@
 #include "image.h"
 #include "seamcarving.h"
 
+#include <iostream>
+#include <sys/time.h>
+
 Image::Image(QString filename)
 {
+    clock_t start = clock();
     QImage _img = QImage(filename);
     _img.convertToFormat(QImage::Format_RGB888).bits();
 
@@ -22,9 +26,11 @@ Image::Image(QString filename)
             img[y][x].g = qGreen(pix);
             img[y][x].b = qBlue(pix);
         }
-
+    std::cout << "Alloc: " << (clock()-start)/(double)CLOCKS_PER_SEC << "s" << std::endl; std::flush(std::cout);
     interest();
+    std::cout << "Interest: " << (clock()-start)/(double)CLOCKS_PER_SEC << "s" << std::endl; std::flush(std::cout);
     tograph();
+    std::cout << "Graph: " << (clock()-start)/(double)CLOCKS_PER_SEC << std::endl; std::flush(std::cout);
 }
 
 void Image::resize(int new_width, int new_height)
