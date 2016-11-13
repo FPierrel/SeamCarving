@@ -2,7 +2,7 @@
 #include "seamcarving.h"
 
 #include <iostream>
-#include <sys/time.h>
+#include <time.h>
 
 Image::Image(QString filename)
 {
