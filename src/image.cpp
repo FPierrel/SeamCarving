@@ -35,8 +35,8 @@ Image::Image(QString filename)
 
 void Image::resize(int new_width, int new_height)
 {
-    int del_x = new_width - width;
-    int del_y = new_height - height;
+	int del_x = width - new_width;
+	int del_y = height - new_height;
 
     if (del_x > 0)
         for (int i = 0; i < del_x ; i++)
